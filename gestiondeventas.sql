@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2023 a las 06:58:21
+-- Tiempo de generación: 28-06-2023 a las 04:04:46
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -62,8 +62,8 @@ INSERT INTO `clientes` (`id_cliente`, `nombre`, `apellido`, `contrasena`, `direc
 CREATE TABLE `productos` (
   `id_producto` int(11) NOT NULL,
   `nombre` varchar(50) DEFAULT NULL,
-  `Precio` int(11) DEFAULT NULL,
-  `Stock` int(11) DEFAULT NULL,
+  `precio` int(11) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL,
   `imagen` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -71,8 +71,8 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id_producto`, `nombre`, `Precio`, `Stock`, `imagen`) VALUES
-(2, 'Choclitos', 2500, 30, 'img/choclitos.png'),
+INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `stock`, `imagen`) VALUES
+(2, 'Choclitos', 2500, 35, 'img/choclitos.png'),
 (3, 'Doritos', 3000, 20, 'img/doritos.png'),
 (4, 'Arroz', 3000, 20, 'img/arroz.png'),
 (5, 'Panela', 6000, 20, 'img/panela.png'),
@@ -84,9 +84,7 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `Precio`, `Stock`, `imagen`) V
 (11, 'Fanta', 2000, 20, 'img/fanta.png'),
 (12, 'Gelatina', 2000, 20, 'img/gelatina.png'),
 (13, 'Lentejas', 4000, 24, 'img/lentejas.png'),
-(14, 'Frijoles', 5000, 110, 'img/frijoles.png'),
-(15, 'Tomate', 1000, 20, 'img/tomate.png'),
-(16, 'Chocolatina', 1500, 44, 'img/chocolatina.png');
+(19, 'Chocorramo', 2500, 22, '');
 
 -- --------------------------------------------------------
 
@@ -117,8 +115,6 @@ INSERT INTO `ventas` (`id`, `clienteid`, `productoid`, `fechaventa`) VALUES
 (67, 10, 10, '2023-05-10'),
 (69, 2, 12, '2023-05-27'),
 (70, 3, 13, '2023-05-13'),
-(71, 4, 14, '2023-05-26'),
-(72, 5, 15, '2023-05-14'),
 (74, 7, 2, '2023-05-19'),
 (75, 8, 4, '2023-05-19'),
 (76, 9, 5, '2023-05-14'),
@@ -156,13 +152,13 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
